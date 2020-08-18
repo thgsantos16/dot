@@ -148,11 +148,13 @@ export default {
 
 <style lang="scss" scoped>
 
+@import 'node_modules/bootstrap/scss/bootstrap';
+
 .row {
   padding: 10vh 0;
 
   &.screen {
-    height: 100vh;
+    min-height: 100vh;
     padding: 0;
   }
 
@@ -200,6 +202,11 @@ export default {
 
     &.lefty {
       float: left;
+
+      @include media-breakpoint-down(lg) {
+        float: none;
+        margin: 25px 0 0;
+      }
     }
   }
 
@@ -230,9 +237,18 @@ export default {
       float: left;
       width: 90%;
       margin-left: -10%;
+
+      @include media-breakpoint-down(lg) {
+        margin-left: -1%;
+        margin-top: 25px;
+      }
   }
 
   ul {
+    @include media-breakpoint-down(lg) {
+      padding: 0;
+    }
+
     li {
       list-style: none;
       margin-bottom: 25px;
@@ -262,13 +278,21 @@ export default {
     .logo {
       display: block;
       margin: -7vh auto 7vh;
-      max-width: 70%
+      max-width: 70%;
+
+      @include media-breakpoint-down(lg) {
+        margin-top: -1vh;
+      }
     }
 
     .box {
       float: left;
       width: 90%;
       margin-left: -30%;
+
+      @include media-breakpoint-down(lg) {
+        margin-left: -1%;
+      }
     }
   }
 }
@@ -282,6 +306,10 @@ export default {
     display: inline-block;
     vertical-align: top;
 
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+    }
+
     .inner {
       width: 10vw;
       height: 10vw;
@@ -289,10 +317,22 @@ export default {
       border: 10px solid #6D0C57;
       margin: 0 auto 20px;
       background-color: #FFF;
+
+      @include media-breakpoint-down(lg) {
+        width: 43vw;
+        height: 43vw;
+        min-width: 205px;
+        min-height: 205px;
+        margin-bottom: 12px;
+      }
     }
 
     .text {
       font-size: 1.2rem;
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 25px;
+      }
     }
   }
 
@@ -301,6 +341,10 @@ export default {
     margin: calc(-5vw - 53px) auto 7vw;
     height: 12px;
     background-color: #C11C92;
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
 }
 
